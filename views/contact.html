@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+    <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <title>Contact</title>
+</head>
+
+<body class="bg-dark">
+
+    <h1 class="text-primary">Inmogestión SA</h1>
+    <div class="container">
+        <div class="card m-3" style="border-left: 8px solid #007bff;">
+            <div class="card-body">
+                <form action="" onsubmit="datos_contacto(event)" id="form_contact" target="_self" method="get">
+
+                    <h3 class="text-primary text-uppercase">Formulario de contacto</h3>
+                    <div class="row">
+                        <div class="col">
+                            <label for="inp_nombre" class="form-label">Nombre:</label>
+                            <input type="text" id="inp_nombre" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="inp_apellido" class="form-label">Apellido:</label>
+                            <input type="text" id="inp_apellido" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inp_telefono" class="form-label">Número de teléfono:</label>
+                            <input type="tel" id="inp_telefono" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="inp_email" class="form-label">Email:</label>
+                            <input type="email" id="inp_email" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="inp_ciudad" class="form-label">Ciudad:</label>
+                            <input type="text" id="inp_ciudad" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="inp_pais" class="form-label">País:</label>
+                            <input type="text" id="inp_pais" class="form-control">
+                        </div>
+                    </div>
+
+
+                    <div class="my-3">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+
+                    <button onclick="window.location.href='../index.html'" class="btn btn-primary">Atrás</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../js/contact.js"></script>
+
+</body>
+
+</html>
