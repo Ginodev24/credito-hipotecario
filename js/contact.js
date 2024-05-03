@@ -1,5 +1,5 @@
 const persona = {
-    id: 0,
+    id: '',
     nombre: '',
     apellido: '',
     telefono: '',
@@ -18,8 +18,8 @@ const datos_contacto = (e) => {
     persona.ciudad = document.forms["form_contact"]["inp_ciudad"].value;
     persona.pais = document.forms["form_contact"]["inp_pais"].value;
 
-    if (persona.id < 0) {
-        persona.id = allStorage().length;
+    if (persona.id <= 0) {
+        persona.id = new Date().valueOf();
     }
 
     let personaJson = JSON.stringify(persona);
@@ -28,8 +28,15 @@ const datos_contacto = (e) => {
 
     e.preventDefault();
     alert("Datos guardados correctamente");
+
+    listarContactos();
+    reset_form();
 };
 
+const reset_form = () => {
+    document.forms["form_contact"].reset();
+    persona.id = 0;
+}
 
 const listarContactos = () => {
 
@@ -61,6 +68,9 @@ const listarContactos = () => {
             + "</td>";
         dinamicTable += "<td>"
             + "<a href='javascript:editarContacto(" + persona.id + ");'>Editar<a/>"
+            + "</td>";
+        dinamicTable += "<td>"
+            + "<a href='javascript:eliminarContacto(" + persona.id + ");'>Eliminar<a/>"
             + "</td>";
         dinamicTable += "</tr>";
     }
@@ -100,7 +110,6 @@ const verDetalles = () => {
 }
 
 const editarContacto = (id) => {
-    alert("En el editar contacto");
     let contactoString = localStorage.getItem(id)
     if (contactoString.length > 0) {
         let contacto = JSON.parse(contactoString);
@@ -112,6 +121,15 @@ const editarContacto = (id) => {
         document.getElementById("inp_pais").value = contacto.pais;
         persona.id = id;
     }
+}
+
+const eliminarContacto = (id) => {
+    let contactoString = localStorage.getItem(id);
+    if(contactoString.length > 0){
+        localStorage.removeItem(id);
+    }
+
+    listarContactos();
 }
 
 const obtenerParametroURL = () => {
