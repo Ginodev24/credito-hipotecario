@@ -44,7 +44,7 @@ const listarContactos = () => {
     let dinamicTable = "";
     let personasLocalStorage = allStorage();
 
-    dinamicTable += "<table class='table'>";
+    dinamicTable += "<table>";
     dinamicTable += "<tr>";
     dinamicTable += "<th>ID</th>";
     dinamicTable += "<th>Nombre</th>";

@@ -2,3 +2,29 @@
     color: red;
     background-color: black;
 }
+
+.tableFixedHead{
+    overflow-y: auto;
+    height: 250px;
+    text-align: left;
+    display: block;
+}
+
+.tableFixedHead thead th{
+    position: sticky;
+    top: 0;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+}
+
+th {
+    background: #eee;
+}

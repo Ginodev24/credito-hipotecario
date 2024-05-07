@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap-5.2.3-dist/css/bootstrap.min.css">
     <script src="../css/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/mortgage.css">
     <title>Contact</title>
 </head>
 
@@ -56,13 +57,17 @@
                 </form>
 
                 <br/>
-                
+
+                <button onclick="reset_form()" class="btn btn-primary">Reiniciar Formulario</button>
+
+                <br/>
+
                 <button onclick="window.location.href='../index.html'" class="btn btn-primary">Atrás</button>
 
                 <button onclick="listarContactos()" class="btn btn-primary">Listar</button>
             </div>
 
-            <div id="table_contact"> </div>
+            <div id="table_contact" class="tableFixedHead"> </div>
         </div>
     </div>
 
